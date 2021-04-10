@@ -1,0 +1,175 @@
+/*affects everything*/
+* {
+    margin: 0; 
+    padding: 0; 
+    font-family: 'roboto';
+} 
+
+/*fun with tabs: https://www.youtube.com/watch?v=oLqdy95LZSw&list=PLMu3-uidZdOfQLr7gSxR0qRDAlVVMyhZ0&index=1*/
+
+/*the whole div container:*/ 
+.mytabs {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 35vw;
+    max-height: 40vh;
+    box-shadow: -10px 10px 0px 0px black; /*could not get this to drop below tab*/
+}
+
+/*remove nipples*/
+.mytabs input[type="radio"] {
+    display: none
+}
+
+/*labels at top*/
+.mytabs label {
+    padding:20px 15px 20px 15px;
+    background:#f0f0f0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background ease 0.3s;
+}
+
+/*housing the text. need to hide all to activate the checked one*/
+.mytabs .tab {
+    width: 100%;
+    height: 20vh;
+    padding: 20px;
+    background: #fff;
+    order: 1; 
+    display:none;
+}
+
+.mytabs .tab > p {font-size: 22px;}
+
+/*specifically for the label of the checked one*/
+.mytabs input[type="radio"]:checked + label {
+    background: white;
+}
+
+/*if checked then next element is label then next element is a tab*/
+.mytabs input[type="radio"]:checked + label + .tab {
+    display: block;
+}
+
+/*grid madness: https://www.youtube.com/watch?v=HgwCeNVPlo0&list=PLMu3-uidZdOfQLr7gSxR0qRDAlVVMyhZ0&index=2&t=1430s*/
+
+.grid {
+    display: grid;
+    grid-template-columns: 5vw 15vw 15vw 15vw 45vw 5vw;
+    grid-template-rows: 15vh 10vh 70vh 5vh;
+    grid-template-areas: 
+    "title title title title2 title2 title2"
+    "header header2 header2 header3 header3 header4"
+    "content content2 content3 content3 content4 content5"
+    "footer footer footer footer2 footer2 footer2"
+}
+
+/*use to identify grid
+.grid div:nth-child(even) {background-color: red;}
+.grid div:nth-child(odd) {background-color: green;}
+*/
+
+.title {
+    grid-area: title;
+    background-color: #0a0a0a;
+    /**/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+    color:white;
+    font-size: 20px;
+}
+
+.title2 {
+    grid-area: title2;
+    background-color: #e9e8e8;
+    /**/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    font-size: 38px;
+}
+
+.header {
+    grid-area: header;
+    background-color: #0a0a0a;
+}
+
+.header2 {
+    grid-area: header2;
+    background-color: #171717;
+}
+
+.header3 {
+    grid-area: header3;
+    background-color: #f0f0f0;
+    box-shadow: -10px -10px 20px 5px rgba(0, 0, 0, 0.164);
+}
+
+.header4 {
+    grid-area: header4;
+    background-color: #e9e8e8;
+}
+
+.content {
+    grid-area: content;
+    background-color: #0a0a0a;
+}
+
+.content2 {
+    grid-area: content2;
+    background-color: #171717;
+    /**/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-end;
+    padding-bottom: 10px;
+}
+
+.content2 > img {
+    padding: 30px;
+}
+
+.content3 {
+    grid-area: content3;
+}
+
+.content4 {
+    grid-area: content4;
+    /**/
+    justify-content: stretch;
+    align-items: stretch;
+    background-color: #f0f0f0;
+    padding-left: 2vw;
+}
+
+.content5 {
+    grid-area: content5;
+    background-color: #e9e8e8;
+}
+
+.footer {
+    grid-column: footer;
+    background-color: #0a0a0a;
+}
+
+.footer2 {
+    grid-column: footer2;
+    background-color: #e9e8e8;
+}
+
+/*images*/
+.photo {
+    max-width: 30vw;
+    height: 70vh;
+}
+
+/*plants would be better*/
+.pattern{
+    width: 80%;
+    padding-top: 53px;
+}
